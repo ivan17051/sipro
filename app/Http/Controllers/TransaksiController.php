@@ -7,22 +7,16 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Datatables;
 use Validator;
-use App\UnitKerja;
-use App\Golongan;
 use App\Pegawai;
-use App\Jabatan;
-use App\Pendidikan;
-use App\Penilaian;
+use App\Barang;
+use App\Transaksi;
 use Carbon\Carbon;
 
-class PenilaianController extends Controller
+class TransaksiController extends Controller
 {
     public function index(){
-        $unitKerja = UnitKerja::where('nama', 'LIKE', 'Puskesmas%')->select('id', 'nama')->get();
-        $golongan = Golongan::all();
-        $jabatan = Jabatan::all();
-        $pendidikan = Pendidikan::all();
-        return view('penilaian', [ 'unitKerja'=>$unitKerja, 'golongan'=>$golongan, 'jabatan'=>$jabatan, 'pendidikan'=>$pendidikan ]);
+        $transaksi = Transaksi::all();
+        return view('welcome', [ 'transaksi'=>$transaksi ]);
     }
     
     public function data(Request $request){

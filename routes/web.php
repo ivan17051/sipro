@@ -15,7 +15,7 @@ Auth::routes();
 
 Route::middleware(['auth'])->group(function (){
     Route::get('/',function(){
-        return redirect('/penilaian');
+        return redirect('/transaksi');
     });
     Route::put('/ubah-password', 'PasswordController@update');
     
@@ -29,7 +29,7 @@ Route::middleware(['auth'])->group(function (){
     Route::get('/stok', 'DataMasterController@jabatan');
     Route::put('/stok', 'DataMasterController@storeUpdateJabatan')->name('jabatan.update');
     
-    Route::get('/transaksi', 'PenilaianController@index');
-    Route::put('/transaksi', 'PenilaianController@storeUpdate')->name('penilaian.update');
-    Route::delete('/transaksi', 'PenilaianController@delete')->name('penilaian.delete');
+    Route::get('/transaksi', 'TransaksiController@index');
+    Route::put('/transaksi', 'TransaksiController@storeUpdate')->name('transaksi.update');
+    Route::delete('/transaksi', 'TransaksiController@delete')->name('transaksi.delete');
 });
