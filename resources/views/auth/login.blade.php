@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PAK Login</title>
+    <title>SIPro Login</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('public/css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('public/vendors/bootstrap-icons/bootstrap-icons.css')}}">

@@ -1,28 +1,27 @@
 @extends('layouts.layout')
 
 @section('title')
-Penilaian
+Transaksi
 @endsection
 
-@section('penilaianStatus')
+@section('transaksiStatus')
 active
 @endsection
 
 @section('content')
-@include('component.searchpegawai')
 <!-- Modal Tambah -->
 <div class="modal fade text-left modal-borderless" id="tambah" tabindex="-1"
     role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Tambah Penilaian</h5>
+                <h5 class="modal-title">Tambah Transaksi</h5>
                 <button type="button" class="close rounded-pill" data-bs-dismiss="modal"
                     aria-label="Close">
                     <i data-feather="x"></i>
                 </button>
             </div>
-            <form action="{{route('penilaian.update')}}" method="POST">
+            <form action="{{route('transaksi.update')}}" method="POST">
             @csrf
             @method('PUT')
             <input type="hidden" name="id">
@@ -99,17 +98,6 @@ active
                                             </tr>
                                         </tbody>
                                     </table>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="first-name-vertical">Unit Kerja</label>
-                                        <select class="choices form-select" id="idunitkerja" name="idunitkerja" required>
-                                            <!-- <option value="">--PILIH--</option> -->
-                                            @foreach($unitKerja as $unit)
-                                            <option value="{{$unit->id}}">{{$unit->nama}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -384,39 +372,7 @@ active
         </div>
     </div>
 </div>
-<!-- Modal Cetak -->
-<div class="modal fade text-left modal-borderless" id="cetak" tabindex="-1"
-    role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Cetak</h5>
-                <button type="button" class="close rounded-pill" data-bs-dismiss="modal"
-                    aria-label="Close">
-                    <i data-feather="x"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="/" method="get" target="_blank">
-                <input type="hidden" name="tipe" id="tipecetak">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" >Nomor</span>
-                            <input id="nomorcetak" name="nomor" maxlength="30" type="text" class="form-control" placeholder="--isi nomor--" aria-label="nomorcetak" aria-describedby="nomor" >
-                        </div>
-                    </div>
-                    <div class="col-12 text-end">
-                        <button type="submit" class="btn btn-sm btn-primary" id="cetak-kp" data-tipe="cetak-kp" >PAK Kenaikan Pangkat</button>
-                        <button type="submit" class="btn btn-sm btn-primary" id="cetak-t" data-tipe="cetak-t" >PAK Temporer</button>
-                        <button type="submit" class="btn btn-sm btn-primary" id="cetak-f1" data-tipe="cetak-f1" >PAK Fungsional 1</button>  
-                    </div>
-                </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+
 <div class="page-heading">
   <div class="page-title">
       <div class="row">
