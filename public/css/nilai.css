@@ -1,0 +1,22 @@
+#nilai .num{
+    background-color: var(--bs-gray);
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    display: inline-block;    
+    padding-top: 2px;
+}
+
+#nilai div[aria-expanded="true"] .num{
+    background-color: var(--bs-blue);
+}
+
+#nilai div[aria-expanded="false"] h6{
+    color: var(--bs-gray);
+}
+
+#nilai div[aria-expanded="true"] h6{
+    color: var(--bs-blue);
+}
