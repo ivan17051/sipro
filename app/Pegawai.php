@@ -11,22 +11,14 @@ class Pegawai extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        "nik",
-        "nip",
-        "nama",
-        "nokartu",
-        "tempatlahir",
-        "tanggallahir",
-        "jeniskelamin",
-        "alamat",
-        "nohp",
-        "status",
+        'nik',
+        'nama',
+        'tempatlahir',
+        'tanggallahir',
+        'jeniskelamin',
+        'alamat',
+        'nohp',
+        'isactive',
     ];
-
-    public function penilaian(){
-        return $this->hasOne(Penilaian::class, 'idpegawai')
-            ->select('id', 'idjabatan', 'idpegawai', 'idgolongan', 'idpendidikan', 'idunitkerja', 'doc')
-            ->latest('doc');
-    }
     
 }

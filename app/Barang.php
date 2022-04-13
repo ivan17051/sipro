@@ -11,6 +11,12 @@ class Pendidikan extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        "nama",
+        'kode',
+        'nama',
+        'jenis',
+        'satuan',
+        'tahun',
+        'harga',
+        'isactive',
     ];
 }
